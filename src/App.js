@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-
+import GameBox from "./components/GameBox";
+import PlayersTurnArea from "./components/PlayersTurnArea";
+import { GameProvider } from "./context/GameContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="pb-3 fw-100">Tic-tac-toe</h1>
+      <GameProvider>
+        <GameBox />
+        <PlayersTurnArea />
+      </GameProvider>
     </div>
   );
 }

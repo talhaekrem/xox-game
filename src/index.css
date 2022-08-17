@@ -1,13 +1,254 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@media (max-width: 600px) {
+  .gameBox {
+    width: 320px;
+    height: 320px;
+    grid-template-columns: 96px 96px 96px;
+    grid-template-rows: 96px 96px 96px;
+  }
+  .bottomBar {
+    width: 320px;
+  }
+}
+@media (min-width: 601px) {
+  .gameBox {
+    width: 368px;
+    height: 368px;
+    grid-template-columns: 112px 112px 112px;
+    grid-template-rows: 112px 112px 112px;
+  }
+  .bottomBar {
+    width: 368px;
+  }
+}
+@media (min-width: 900px) {
+  .gameBox {
+    width: 416px;
+    height: 416px;
+    grid-template-columns: 128px 128px 128px;
+    grid-template-rows: 128px 128px 128px;
+  }
+  .bottomBar {
+    width: 416px;
+  }
+}
+@media (min-width: 1200px) {
+  .gameBox {
+    width: 464px;
+    height: 464px;
+    grid-template-columns: 144px 144px 144px;
+    grid-template-rows: 144px 144px 144px;
+  }
+  .bottomBar {
+    width: 464px;
+  }
+}
+@media (min-width: 1536px) {
+  .gameBox {
+    width: 512px;
+    height: 512px;
+    grid-template-columns: 160px 160px 160px;
+    grid-template-rows: 160px 160px 160px;
+  }
+  .bottomBar {
+    width: 512px;
+  }
+}
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  background: #780206; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #061161,
+    #780206
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gameBox {
+  background-color: #efefef;
+  border-radius: 1rem;
+  display: grid;
+  padding: 8px;
+  gap: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.gameBoxItem {
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: background-color 0.125s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.xTurn:hover {
+  background-color: rgba(6, 17, 97, 0.1);
+}
+.oTurn:hover {
+  background-color: rgba(120, 2, 6, 0.1);
+}
+.pb-3 {
+  padding-bottom: 1rem;
+}
+.fw-100 {
+  font-weight: 100;
+}
+.bottomBar {
+  padding: 0.5rem;
+  height: 4rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  background-color: rgba(239, 239, 239, 0.5);
+}
+.bottomFlex {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.playersNav {
+  justify-content: space-around;
+}
+.winnerInfo {
+  justify-content: space-between;
+}
+.turnArrow {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.arrowX {
+  transform: rotate(-180deg);
+}
+.p-relative {
+  position: relative;
+}
+.matchedLinesBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.linePath {
+  stroke-dasharray: 652;
+  stroke-dashoffset: 652;
+  animation: drawing 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+@keyframes drawing {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.Xfirst {
+  stroke-dasharray: 92;
+  stroke-dashoffset: 92;
+  animation: drawing 0.25s ease-out forwards;
+}
+.Xsecond {
+  stroke-dasharray: 85;
+  stroke-dashoffset: 85;
+  animation: drawing 0.25s ease-out forwards;
+  animation-delay: 0.25s;
+}
+.Opath {
+  stroke-dasharray: 205;
+  stroke-dashoffset: 205;
+  animation: drawing 0.5s ease-out forwards;
+}
+.growAnimation {
+  animation: grow 1s ease forwards;
+}
+@keyframes grow {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 50px;
+    height: 50px;
+  }
+}
+.XandO {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.lowOpacity {
+  opacity: 0.3;
+}
+.d-none {
+  display: none;
+}
+.restartBtn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: box-shadow 0.25s ease;
+  border: none;
+  box-shadow: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #efefef;
+}
+.restartBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.svgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wonText {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: toFullOpacity 0.75s ease forwards;
+  animation-delay: 0.25s;
+}
+.xColor {
+  color: #061161;
+}
+.oColor {
+  color: #780206;
+}
+@keyframes toFullOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
