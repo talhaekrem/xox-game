@@ -252,3 +252,12 @@ body {
     opacity: 1;
   }
 }
+.githubLink {
+  color: #ededed;
+  text-decoration: none;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.githubLink:hover {
+  text-decoration: underline;
+}
