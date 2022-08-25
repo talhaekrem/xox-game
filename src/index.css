@@ -14,8 +14,6 @@ body {
   .gameBox {
     width: 320px;
     height: 320px;
-    grid-template-columns: 96px 96px 96px;
-    grid-template-rows: 96px 96px 96px;
   }
   .bottomBar {
     width: 320px;
@@ -25,8 +23,6 @@ body {
   .gameBox {
     width: 368px;
     height: 368px;
-    grid-template-columns: 112px 112px 112px;
-    grid-template-rows: 112px 112px 112px;
   }
   .bottomBar {
     width: 368px;
@@ -36,8 +32,6 @@ body {
   .gameBox {
     width: 416px;
     height: 416px;
-    grid-template-columns: 128px 128px 128px;
-    grid-template-rows: 128px 128px 128px;
   }
   .bottomBar {
     width: 416px;
@@ -47,8 +41,6 @@ body {
   .gameBox {
     width: 464px;
     height: 464px;
-    grid-template-columns: 144px 144px 144px;
-    grid-template-rows: 144px 144px 144px;
   }
   .bottomBar {
     width: 464px;
@@ -58,8 +50,6 @@ body {
   .gameBox {
     width: 512px;
     height: 512px;
-    grid-template-columns: 160px 160px 160px;
-    grid-template-rows: 160px 160px 160px;
   }
   .bottomBar {
     width: 512px;
@@ -90,6 +80,8 @@ body {
   display: grid;
   padding: 8px;
   gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
